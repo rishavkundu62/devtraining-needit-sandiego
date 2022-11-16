@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" sizeclass="4" type="collection">
+        <element choice="1" choice_field="category" choice_table="incident" label="Category" max_length="40" name="category" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Inquiry / Help" sequence="0" value="inquiry"/>
+                <element inactive_on_update="false" label="Software" sequence="1" value="software"/>
+                <element inactive_on_update="false" label="Hardware" sequence="2" value="hardware"/>
+                <element inactive_on_update="false" label="Network" sequence="3" value="network"/>
+                <element inactive_on_update="false" label="Database" sequence="4" value="database"/>
+            </choice>
+        </element>
+        <element choice="1" choice_field="subcategory" choice_table="incident" label="Subcategory" max_length="40" name="subcategory" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Antivirus" sequence="0" value="antivirus"/>
+                <element inactive_on_update="false" label="CPU" sequence="1" value="cpu"/>
+                <element inactive_on_update="false" label="DB2" sequence="2" value="db2"/>
+                <element inactive_on_update="false" label="DHCP" sequence="3" value="dhcp"/>
+                <element inactive_on_update="false" label="Disk" sequence="4" value="disk"/>
+                <element inactive_on_update="false" label="DNS" sequence="5" value="dns"/>
+                <element inactive_on_update="false" label="Email" sequence="6" value="email"/>
+                <element inactive_on_update="false" label="Internal Application" sequence="7" value="internal application"/>
+                <element inactive_on_update="false" label="IP Address" sequence="8" value="ip address"/>
+                <element inactive_on_update="false" label="Keyboard" sequence="9" value="keyboard"/>
+                <element inactive_on_update="false" label="Memory" sequence="10" value="memory"/>
+                <element inactive_on_update="false" label="Monitor" sequence="11" value="monitor"/>
+                <element inactive_on_update="false" label="Mouse" sequence="12" value="mouse"/>
+                <element inactive_on_update="false" label="MS SQL Server" sequence="13" value="sql server"/>
+                <element inactive_on_update="false" label="Operating System" sequence="14" value="os"/>
+                <element inactive_on_update="false" label="Oracle" sequence="15" value="oracle"/>
+                <element inactive_on_update="false" label="VPN" sequence="16" value="vpn"/>
+                <element inactive_on_update="false" label="Wireless" sequence="17" value="wireless"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Other" max_length="40" name="u_other" type="string"/>
         <element attributes="encode_utf8=false" label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
         <element attributes="edge_encryption_enabled=true" choice="3" default="legal" label="Request type" mandatory="true" max_length="40" name="u_request_type" type="string">
             <choice>
@@ -19,6 +51,7 @@
                 <element inactive_on_update="false" label="Legal 2" sequence="5" value="legal2"/>
                 <element inactive_on_update="false" label="Your Department Choice 1" sequence="6" value="your_choice1"/>
                 <element inactive_on_update="false" label="Your Department Choice 2" sequence="7" value="your_choice2"/>
+                <element inactive_on_update="false" label="Other" sequence="8" value="other"/>
             </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" label="When needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
